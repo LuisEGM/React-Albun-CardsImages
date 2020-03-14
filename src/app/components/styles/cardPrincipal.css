@@ -1,0 +1,32 @@
+.ancho{
+    /*width: 18rem;*/
+    width: 23%;
+    margin: 1%;
+    padding: 0;
+    border: solid 1.5px;
+    display: inline-block;
+    -webkit-box-shadow: -4px 4px 5px 2px rgba(77,77,77,1);
+}
+
+.tituloPrin{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.tituloCard{
+    font-size: 20px;
+}
+
+.textCard{
+    font-size: 10px;
+}
+
+.boton{
+    margin: 5px auto;
+    -webkit-box-shadow: -3px 3px 0px 0px rgba(135,175,196,1);
+}
+
+.boton2{
+    margin: 5px auto;
+    -webkit-box-shadow: -3px 3px 0px 0px rgba(194,114,162,1);
+}
