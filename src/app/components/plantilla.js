@@ -19,19 +19,13 @@ class Plantilla extends React.Component{
                   </div>
 
                   <div className="row">
-
                       <div className="contenedor3">
                           <div className="row">
-
                               <Formulario/>
-
                               <div className="col-md-1" ></div>
-
                               <TarjetaPlantilla/>
-
                           </div>
                       </div>
-
                   </div>
 
               </div>

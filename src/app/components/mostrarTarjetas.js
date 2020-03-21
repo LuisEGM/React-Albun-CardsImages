@@ -5,17 +5,19 @@ class MostrarTarjetas extends React.Component{
 
     render(){
 
+        const { titulosP } = this.props;
+
         return(
 
             <Fragment>
-                <CardPrincipal/>
-                <CardPrincipal/>
-                <CardPrincipal/>
-                <CardPrincipal/>
-                <CardPrincipal/>
-                <CardPrincipal/>
-                <CardPrincipal/>
-                <CardPrincipal/>
+                {
+                    titulosP.map( (elem,i) => (
+                        <CardPrincipal
+                            key={i}
+                            title={elem}
+                        />
+                    ))
+                }
             </Fragment>
         );
 

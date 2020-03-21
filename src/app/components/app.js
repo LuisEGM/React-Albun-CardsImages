@@ -5,24 +5,31 @@ import Plantilla from "./plantilla";
 
 import "./styles/app.css";
 
-const App = () => (
+const App = () => {
 
-    <React.Fragment>
+    const vecTitulos = ["Titulo_1","Titulo_2","Titulo_3","Titulo_4",
+                        "Titulo_5","Titulo_6","Titulo_7","Titulo_8"]
 
-        <Navegacion/>
+    return(
 
-        <div className="container">
-            <Plantilla/>
-        </div>
+        <React.Fragment>
+            <Navegacion/>
 
-        <div className="tablaCards">
-            <h2>Tus imagenes de colección</h2>
-            <hr/>
-            <MostrarTarjetas/>
-        </div>
-    </React.Fragment>
+            <div className="container">
+                <Plantilla/>
+            </div>
 
+            <div className="tablaCards">
+                <h2>Tus imagenes de colección</h2>
+                <hr/>
+                <MostrarTarjetas
+                    titulosP={vecTitulos}
+                />
+            </div>
+        </React.Fragment>        
 
-);
+    )
+    
+}
 
 export default App;
