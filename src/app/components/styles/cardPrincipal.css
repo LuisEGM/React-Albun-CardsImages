@@ -13,12 +13,21 @@
     margin-top: 20px;
 }
 
+.tituloCardP{
+    font-size: 25px;
+}
+´
 .tituloCard{
     font-size: 20px;
 }
 
 .textCard{
-    font-size: 10px;
+    font-size: 12px;
+}
+
+
+.textCardP{
+    font-size: 15px;
 }
 
 .boton{

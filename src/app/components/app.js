@@ -5,31 +5,51 @@ import Plantilla from "./plantilla";
 
 import "./styles/app.css";
 
-const App = () => {
+const vecTitulos = ["Titulo_1","Titulo_2","Titulo_3","Titulo_4",
+"Titulo_5","Titulo_6","Titulo_7","Titulo_8"]
 
-    const vecTitulos = ["Titulo_1","Titulo_2","Titulo_3","Titulo_4",
-                        "Titulo_5","Titulo_6","Titulo_7","Titulo_8"]
+class App extends React.Component {
 
-    return(
+    constructor(props){
+        super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = {
+            cards: []
+        };
+    }
 
-        <React.Fragment>
-            <Navegacion/>
+    handleSubmit(e){
+        e.preventDefault();
+        console.log(e);
+    }
 
-            <div className="container">
-                <Plantilla/>
-            </div>
+    render(){
 
-            <div className="tablaCards">
-                <h2>Tus imagenes de colección</h2>
-                <hr/>
-                <MostrarTarjetas
-                    titulosP={vecTitulos}
-                />
-            </div>
-        </React.Fragment>        
+        return(
 
-    )
+            <React.Fragment>
+                
+                <Navegacion/>
     
+                <div className="container">
+                    <Plantilla
+                        onSubmit={this.handleSubmit}
+                    />
+                </div>
+    
+                <div className="tablaCards">
+                    <h2>Tus imagenes de colección</h2>
+                    <hr/>
+                    <MostrarTarjetas
+                        titulosP={vecTitulos}
+                    />
+                </div>
+            </React.Fragment>        
+    
+        )
+
+    }
+
 }
 
 export default App;

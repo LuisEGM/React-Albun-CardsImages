@@ -1,31 +1,55 @@
 import React from "react";
 
-class TarjetaPlantilla extends React.Component {
+const TarjetaPlantilla = ({ linkImg , titulo, descripcion }) => (
 
-    render(){
+    <div className="col-md-6 cardTemplate">
 
-        return(
-
-            <div className="col-md-6 cardTemplate">
-
-                <div className="card anchoTP">
-                    <img className="card-img-top" src="https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500"  alt="Card image cap" alt="Card image cap"/>
-                    <div className="card-body">
-                        <h5 className="tituloCard">Titulo X</h5>
-                        <p className="textCard">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <div className="row">
-                            <a href="#" className="btn btn-primary boton col-sm-5">Editar</a>
-                            <a href="#" className="btn btn-danger boton2 col-sm-5" >Eliminar</a>
-                        </div>
-                    </div>
+        <div className="card anchoTP">
+            <img className="card-img-top" src={linkImg || "https://lh3.googleusercontent.com/proxy/csrsqpw0zUxR2Gw-dJd-vrkWP7oTnkOxlkVDQvbOakbmJuKDsW8mbTOvCZCqn-tL1Qamg7sHPkNbRs5wb3dUbQiTDkipnSNqNZFFAgSyE8itqX6IHlZcA2eH2HDjSvN6VUs33qaA"} alt="Card image cap"/>
+            <div className="card-body">
+                <h5 className="tituloCardP">{titulo || "Por definir..."}</h5>
+                <p className="textCardP">{descripcion || "Sin descripción..."}</p>
+                <div className="row">
+                    <a href="#" className="btn btn-primary boton col-sm-5">Editar</a>
+                    <a href="#" className="btn btn-danger boton2 col-sm-5" >Eliminar</a>
                 </div>
-
             </div>
+        </div>
 
-        );
+    </div>
 
-    }
-
-}
+);
 
 export default TarjetaPlantilla;
+
+// class TarjetaPlantilla extends React.Component {
+
+//     render(){
+
+//         const { linkImg , titulo, descripcion } = this.props;
+
+//         return(
+
+//             <div className="col-md-6 cardTemplate">
+
+//                 <div className="card anchoTP">
+//                     <img className="card-img-top" src={linkImg} /* || "https://lh3.googleusercontent.com/proxy/csrsqpw0zUxR2Gw-dJd-vrkWP7oTnkOxlkVDQvbOakbmJuKDsW8mbTOvCZCqn-tL1Qamg7sHPkNbRs5wb3dUbQiTDkipnSNqNZFFAgSyE8itqX6IHlZcA2eH2HDjSvN6VUs33qaA"}*/ alt="Card image cap"/>
+//                     <div className="card-body">
+//                         <h5 className="tituloCardP">{titulo /*|| "Por definir..."*/}</h5>
+//                         <p className="textCardP">{descripcion/* || "Sin descripción..."*/}</p>
+//                         <div className="row">
+//                             <a href="#" className="btn btn-primary boton col-sm-5">Editar</a>
+//                             <a href="#" className="btn btn-danger boton2 col-sm-5" >Eliminar</a>
+//                         </div>
+//                     </div>
+//                 </div>
+
+//             </div>
+
+//         );
+
+//     }
+
+// }
+
+// export default TarjetaPlantilla;
