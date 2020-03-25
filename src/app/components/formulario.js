@@ -4,7 +4,7 @@ class Forumario extends React.Component{
 
     render(){
 
-        const { onChange, form, onSubmit } = this.props;
+        const { onChange, onSubmit, form } = this.props;
 
         return(
 

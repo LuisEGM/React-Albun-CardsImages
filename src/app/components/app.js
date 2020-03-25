@@ -5,22 +5,51 @@ import Plantilla from "./plantilla";
 
 import "./styles/app.css";
 
-const vecTitulos = ["Titulo_1","Titulo_2","Titulo_3","Titulo_4",
-"Titulo_5","Titulo_6","Titulo_7","Titulo_8"]
+let cardsPartials = [];
 
 class App extends React.Component {
 
     constructor(props){
         super(props);
+        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.state = {
+            form: {
+                linkImg:'',
+                titulo:'',
+                descripcion:''
+            },
             cards: []
         };
     }
 
     handleSubmit(e){
         e.preventDefault();
-        console.log(e);
+        
+        cardsPartials.push(this.state.form);
+        console.log(cardsPartials);
+        //console.log(this.state.form);
+        this.setState({
+            cards: cardsPartials
+        })
+        
+        
+    }
+
+    handleChange(e){
+        //console.log(`${ e.target.name }: ${e.target.value}`);
+        //let partialState = {};
+        //partialState[e.target.name] = e.target.value;
+
+        this.setState({
+            //para que no se sobre escriba la info del state
+            form: {
+                ...this.state.form,
+                [e.target.name]: e.target.value
+            }
+            
+        })
+
     }
 
     render(){
@@ -33,7 +62,9 @@ class App extends React.Component {
     
                 <div className="container">
                     <Plantilla
+                        onChange={this.handleChange}
                         onSubmit={this.handleSubmit}
+                        form={this.state.form}
                     />
                 </div>
     
@@ -41,7 +72,7 @@ class App extends React.Component {
                     <h2>Tus imagenes de colección</h2>
                     <hr/>
                     <MostrarTarjetas
-                        titulosP={vecTitulos}
+                        tarjetas={this.state.cards}
                     />
                 </div>
             </React.Fragment>        

@@ -6,37 +6,9 @@ import "./styles/plantilla.css";
 
 class Plantilla extends React.Component{
 
-    constructor(props){
-        super(props);
-        this.handleChange = this.handleChange.bind(this);
-        this.state = {
-            form: {
-                linkImg:'',
-                titulo:'',
-                descripcion:''
-            }
-        };
-    }
-
-    handleChange(e){
-        //console.log(`${ e.target.name }: ${e.target.value}`);
-        //let partialState = {};
-        //partialState[e.target.name] = e.target.value;
-
-        this.setState({
-            //para que no se sobre escriba la info del state
-            form: {
-                ...this.state.form,
-                [e.target.name]: e.target.value
-            }
-            
-        })
-
-    }
-
     render(){
-        
-        const { onSubmit } = this.props;
+
+        const { onChange, onSubmit, form } = this.props;
 
         return(
 
@@ -52,13 +24,13 @@ class Plantilla extends React.Component{
                       <div className="contenedor3">
                           <div className="row">
                               <Formulario
-                                onChange={this.handleChange}
+                                onChange={onChange}
                                 onSubmit={onSubmit}
-                                form={this.state.form}
+                                form={form}
                               />
                               <div className="col-md-1" ></div>
                               <TarjetaPlantilla
-                                {...this.state.form}
+                                {...form}
                               />
                           </div>
                       </div>
