@@ -30,7 +30,12 @@ class App extends React.Component {
         console.log(cardsPartials);
         //console.log(this.state.form);
         this.setState({
-            cards: cardsPartials
+            cards: cardsPartials,
+            form: {
+                linkImg:'',
+                titulo:'',
+                descripcion:''
+            }
         })
         
         
